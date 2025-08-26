@@ -2,106 +2,227 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nashville Acai Bowl Directory</title>
+  <title>Dopamine Profit Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AdSense/Ad Network placeholder -->
+  <!-- <script data-ad-client="ca-pub-xxxx" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #faf9f6;
       margin: 0;
-      padding: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #ffef99 0%, #ffd6e0 100%);
+      color: #222;
     }
     header {
-      background: #4e2e53;
+      background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
       color: white;
-      padding: 1em;
       text-align: center;
+      padding: 2em 1em 1em 1em;
+      box-shadow: 0 2px 8px rgba(255,95,109,0.15);
+      border-radius: 0 0 30px 30px;
     }
     h1 {
+      font-size: 2.4em;
       margin: 0;
-      font-size: 2em;
+      font-weight: 900;
+      letter-spacing: 2px;
     }
-    .directory {
-      max-width: 800px;
+    .tagline {
+      font-size: 1.1em;
+      margin: 0.6em 0 0 0;
+      font-weight: 500;
+      color: #fffbe9;
+    }
+    .container {
+      max-width: 900px;
       margin: 2em auto;
-      background: #fff;
-      border-radius: 8px;
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(255,95,109,0.08);
       padding: 2em;
-      box-shadow: 0 0 12px rgba(0,0,0,0.09);
     }
-    .bowl-shop {
-      border-bottom: 1px solid #eee;
-      padding: 1em 0;
-      display: flex;
-      align-items: center;
+    .ads-section {
+      margin: 1.5em 0;
+      text-align: center;
     }
-    .bowl-shop:last-child {
-      border-bottom: none;
-    }
-    .shop-info {
-      flex: 1;
-    }
-    .shop-name {
-      font-size: 1.3em;
-      color: #4e2e53;
-      margin: 0 0 0.2em 0;
-    }
-    .shop-address {
-      color: #444;
-      font-size: 1em;
-      margin: 0 0 0.2em 0;
-    }
-    .shop-link a {
-      color: #9c27b0;
-      text-decoration: none;
+    .ads-placeholder {
+      background: #ffd700;
+      color: #ff5f6d;
+      border-radius: 8px;
+      padding: 1.1em;
+      font-size: 1.1em;
       font-weight: bold;
+      box-shadow: 0 2px 14px rgba(255,223,0,0.12);
+      margin: 0 auto;
+      max-width: 420px;
     }
-    .shop-link a:hover {
-      text-decoration: underline;
+    .affiliate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5em;
+      margin: 2em 0;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(255,95,109,0.09);
+      padding: 1.2em;
+      text-align: center;
+      transition: transform .18s;
+    }
+    .product-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 20px rgba(255,95,109,0.16);
+    }
+    .product-card img {
+      width: 68px;
+      height: 68px;
+      object-fit: contain;
+      margin-bottom: 0.9em;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(255,95,109,0.09);
+    }
+    .product-title {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #ff5f6d;
+      margin-bottom: 0.3em;
+    }
+    .product-desc {
+      font-size: 0.93em;
+      color: #444;
+      margin-bottom: 0.6em;
+    }
+    .buy-btn {
+      background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(255,95,109,0.08);
+      transition: background .16s;
+    }
+    .buy-btn:hover {
+      background: linear-gradient(90deg, #ffc371 0%, #ff5f6d 100%);
+    }
+    .newsletter-section {
+      margin: 2em 0;
+      background: #ffef99;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(255,223,0,0.08);
+      padding: 1.4em;
+      text-align: center;
+    }
+    .newsletter-section input[type="email"] {
+      padding: 0.6em;
+      border-radius: 6px;
+      border: 1px solid #fffbe9;
+      font-size: 1em;
+      width: 50%;
+      max-width: 240px;
+      margin-right: 0.4em;
+      margin-bottom: 1em;
+    }
+    .newsletter-section button {
+      background: #ff5f6d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 0.6em 1em;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(255,95,109,0.06);
+      transition: background .15s;
+    }
+    .newsletter-section button:hover {
+      background: #ffc371;
+      color: #ff5f6d;
+    }
+    .social-links {
+      margin: 2em 0 0 0;
+      text-align: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0 1em;
+      font-size: 1.3em;
+      color: #ff5f6d;
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .social-links a:hover {
+      color: #ffc371;
+    }
+    footer {
+      background: #ffb6c1;
+      color: #ff5f6d;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 1em;
+      border-radius: 0 0 14px 14px;
+      margin-top: 2em;
+    }
+    @media (max-width: 600px) {
+      .container { padding: 1em; }
+      h1 { font-size: 1.5em; }
+      .newsletter-section input[type="email"] { width: 90%; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Nashville Acai Bowl Directory</h1>
-    <p>Discover the best spots for acai bowls in Music City!</p>
+    <h1>Dopamine Profit Hub</h1>
+    <div class="tagline">Feel Good, Earn Good — Simple Monetization for Maximum Profit</div>
   </header>
-  <section class="directory">
-    <div class="bowl-shop">
-      <div class="shop-info">
-        <div class="shop-name">E+ROSE Wellness Cafe</div>
-        <div class="shop-address">1100 Fatherland St #106, Nashville, TN 37206</div>
-        <div class="shop-link"><a href="https://www.erosejuice.com/" target="_blank">Website</a></div>
+  <div class="container">
+    <div class="ads-section">
+      <div class="ads-placeholder">
+        [AD SPACE] — Paste your AdSense/ad network code here!
       </div>
     </div>
-    <div class="bowl-shop">
-      <div class="shop-info">
-        <div class="shop-name">The Urban Juicer</div>
-        <div class="shop-address">2206 8th Ave S, Nashville, TN 37204</div>
-        <div class="shop-link"><a href="https://theurbanjuicer.com/" target="_blank">Website</a></div>
+    <h2 style="color:#ff5f6d;">Affiliate Picks: Profit from Happiness</h2>
+    <div class="affiliate-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&h=80" alt="Supplement">
+        <div class="product-title">DopaMax Supplement</div>
+        <div class="product-desc">Boost dopamine & focus. Top seller!</div>
+        <a href="https://your-affiliate-link.example.com/dopamax" class="buy-btn" target="_blank">Buy Now</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519864600265-c3d0a6610b80?auto=format&fit=facearea&w=80&h=80" alt="Book">
+        <div class="product-title">Dopamine Effect (Book)</div>
+        <div class="product-desc">Unlock your motivation and profit with science.</div>
+        <a href="https://your-affiliate-link.example.com/book" class="buy-btn" target="_blank">Shop Book</a>
+      </div>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&h=80" alt="Merch">
+        <div class="product-title">Dopamine Vibes Tee</div>
+        <div class="product-desc">Wear your happiness. Bright and bold!</div>
+        <a href="https://your-affiliate-link.example.com/shirt" class="buy-btn" target="_blank">Get Shirt</a>
       </div>
     </div>
-    <div class="bowl-shop">
-      <div class="shop-info">
-        <div class="shop-name">Franklin Juice Co.</div>
-        <div class="shop-address">2301 12th Ave S, Nashville, TN 37204</div>
-        <div class="shop-link"><a href="https://franklinjuice.com/" target="_blank">Website</a></div>
-      </div>
+    <div class="newsletter-section">
+      <h3>Get Weekly Profit Tips!</h3>
+      <form action="#" method="POST">
+        <input type="email" name="email" placeholder="Your email..." required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <div style="font-size:0.93em;color:#b48e00;margin-top:0.6em;">No spam. Just pure profit strategies.</div>
     </div>
-    <div class="bowl-shop">
-      <div class="shop-info">
-        <div class="shop-name">Juice Nashville</div>
-        <div class="shop-address">500 Gallatin Ave, Nashville, TN 37206</div>
-        <div class="shop-link"><a href="https://juicenashville.com/" target="_blank">Website</a></div>
-      </div>
+    <div class="social-links">
+      <a href="https://instagram.com/" target="_blank" title="Instagram">📸</a>
+      <a href="https://twitter.com/" target="_blank" title="Twitter">🐦</a>
+      <a href="https://tiktok.com/" target="_blank" title="TikTok">🎵</a>
+      <a href="mailto:your@email.com" title="Email">✉️</a>
     </div>
-    <div class="bowl-shop">
-      <div class="shop-info">
-        <div class="shop-name">Clean Juice</div>
-        <div class="shop-address">718 Thompson Ln, Nashville, TN 37204</div>
-        <div class="shop-link"><a href="https://www.cleanjuice.com/" target="_blank">Website</a></div>
-      </div>
-    </div>
-  </section>
+  </div>
+  <footer>
+    &copy; 2025 Dopamine Profit Hub &mdash; Simple, Automated, Profitable!
+  </footer>
 </body>
 </html>
