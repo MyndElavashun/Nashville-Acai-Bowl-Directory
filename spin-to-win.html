@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spin to Win! – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff9c4; color: #905200; margin: 0; }
+    .container { max-width: 400px; margin: 3em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #ffd70044; padding: 2em; text-align: center; }
+    h1 { color: #ff5f6d; }
+    .wheel { font-size: 2.5em; margin: 1em 0; }
+    .spin-btn { background: #ff5f6d; color: #fff; padding: 0.7em 2em; font-size: 1.2em; border-radius: 12px; border: none; cursor: pointer; margin-bottom: 1em; }
+    .result { font-size: 1.4em; color: #5f338c; margin-top: 1em; }
+    .note { font-size: 0.9em; color: #9e9e9e; margin-top: 1em; }
+  </style>
+  <script>
+    function spin() {
+      const prizes = [
+        '🥣 Free Topping!',
+        '🍌 50¢ Off Next Bowl!',
+        '🍓 Cute Sticker!',
+        '🌟 Double Points!',
+        '😅 Try Again...'
+      ];
+      const result = prizes[Math.floor(Math.random() * prizes.length)];
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Spin to Win!</h1>
+    <div class="wheel">🎡</div>
+    <button class="spin-btn" onclick="spin()">Spin Now</button>
+    <div id="result" class="result"></div>
+    <div class="note">Premium members get a bonus spin daily!</div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
