@@ -1,0 +1,29 @@
+name: Affiliate Products Automation
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Every Monday at 6am UTC
+  workflow_dispatch:
+
+jobs:
+  update-products:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Rotate affiliate products (placeholder)
+        run: |
+          echo "This step would run a script to rotate or update affiliate products in index.html from products.json."
+          # Future: Use a script here to update product cards from products.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'dopamine-bot'
+          git config --global user.email 'dopamine-bot@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Automated affiliate product update [bot]' || echo "No changes to commit"
+          git push
+
+      - name: Notify success
+        run: echo "Affiliate product update workflow completed. Ready for additional automation!"
