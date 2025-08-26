@@ -1,4 +1,4 @@
-name: Affiliate Products Automation
+name: Acai Finder Nashville Automation
 
 on:
   schedule:
@@ -19,8 +19,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.name 'dopamine-bot'
-          git config --global user.email 'dopamine-bot@users.noreply.github.com'
+          git config --global user.name 'acai-bot'
+          git config --global user.email 'acai-bot@users.noreply.github.com'
           git add index.html
           git commit -m 'Automated affiliate product update [bot]' || echo "No changes to commit"
           git push
