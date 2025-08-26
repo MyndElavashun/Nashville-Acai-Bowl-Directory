@@ -1,0 +1,56 @@
+name: Dopamine Acai Directory Automation
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-acai-directory:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run fetch acai data script
+        run: |
+          cd scripts
+          python fetch_acai_data.py
+
+      - name: Run validate acai data script
+        run: |
+          cd scripts
+          python validate_acai_data.py
+
+      - name: Run update leaderboards script
+        run: |
+          cd scripts
+          python update_leaderboards.py
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'dopamine-acai-bot'
+          git config --global user.email 'dopamine-acai-bot@users.noreply.github.com'
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated acai directory update [bot]"
+            git push
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+      - name: Notify completion
+        run: echo "Dopamine Acai Directory automation workflow completed successfully!"
