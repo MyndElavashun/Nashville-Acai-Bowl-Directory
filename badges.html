@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Badges – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #e6f7ff; color: #18405a; margin: 0; }
+    .container { max-width: 500px; margin: 2em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #6edcfc40; padding: 2em; }
+    h1 { text-align: center; color: #1d62f0; }
+    .badges { display: flex; justify-content: space-around; margin-top: 1.2em; }
+    .badge { font-size: 2em; }
+    .desc { text-align: center; margin-top: 1.5em; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Collectible Badges</h1>
+    <div class="badges">
+      <div class="badge">🍓<br>Berry Lover</div>
+      <div class="badge">🍌<br>Banana Champ</div>
+      <div class="badge">🥥<br>Coconut Pro</div>
+      <div class="badge">🌟<br>Legend</div>
+    </div>
+    <div class="desc">
+      Try new shops, share photos, and unlock all badges.<br>
+      <b>Premium members</b> unlock exclusive badges!
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
