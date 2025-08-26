@@ -5,116 +5,25 @@
   <title>Nashville Acai Bowl Adventure Directory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(135deg, #ffef99 0%, #ffd6e0 100%);
-      color: #222;
-    }
-    header {
-      background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
-      color: white;
-      text-align: center;
-      padding: 2em 1em 1em 1em;
-      box-shadow: 0 2px 8px rgba(255,95,109,0.15);
-      border-radius: 0 0 30px 30px;
-    }
-    h1 {
-      font-size: 2.4em;
-      margin: 0;
-      font-weight: 900;
-      letter-spacing: 2px;
-    }
-    .tagline {
-      font-size: 1.1em;
-      margin: 0.6em 0 0 0;
-      font-weight: 500;
-      color: #fffbe9;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2em auto;
-      background: rgba(255,255,255,0.98);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(255,95,109,0.08);
-      padding: 2em;
-    }
-    .location-list {
-      margin: 1.5em 0;
-      padding: 0;
-      list-style: none;
-    }
-    .location-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(255,95,109,0.09);
-      padding: 1.2em;
-      margin-bottom: 1em;
-      transition: transform .18s;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .location-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 4px 20px rgba(255,95,109,0.16);
-    }
-    .location-card .name {
-      font-size: 1.3em;
-      font-weight: bold;
-      color: #ff5f6d;
-    }
-    .location-card .address {
-      font-size: 1em;
-      color: #555;
-      margin: 0.2em 0 0.8em 0;
-    }
-    .location-card .website {
-      font-size: 0.99em;
-      color: #1d62f0;
-      text-decoration: underline;
-    }
-    .section-title {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-top: 1.2em;
-      color: #5f338c;
-    }
-    .badge {
-      background: #ffd700;
-      color: #a5571a;
-      padding: 0.3em 0.7em;
-      border-radius: 12px;
-      font-weight: bold;
-      font-size: 1em;
-      margin-right: 0.5em;
-    }
-    .deal {
-      background: #ffef99;
-      border: 1px solid #ffd700;
-      color: #a5571a;
-      border-radius: 10px;
-      padding: 0.8em;
-      margin-bottom: 1em;
-      font-size: 1.09em;
-    }
-    .merch-list {
-      margin-top: 1em;
-      padding-left: 1.2em;
-    }
-    .leaderboard {
-      margin-top: 1.5em;
-      background: #f6e7fe;
-      border-radius: 10px;
-      padding: 1em;
-    }
+    body { margin: 0; font-family: 'Inter', Arial, sans-serif; background: linear-gradient(135deg, #ffef99 0%, #ffd6e0 100%); color: #222; }
+    header { background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%); color: white; text-align: center; padding: 2em 1em 1em 1em; box-shadow: 0 2px 8px rgba(255,95,109,0.15); border-radius: 0 0 30px 30px; }
+    h1 { font-size: 2.4em; margin: 0; font-weight: 900; letter-spacing: 2px; }
+    .tagline { font-size: 1.1em; margin: 0.6em 0 0 0; font-weight: 500; color: #fffbe9; }
+    .container { max-width: 900px; margin: 2em auto; background: rgba(255,255,255,0.98); border-radius: 18px; box-shadow: 0 4px 24px rgba(255,95,109,0.08); padding: 2em; }
+    .location-list { margin: 1.5em 0; padding: 0; list-style: none; }
+    .location-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(255,95,109,0.09); padding: 1.2em; margin-bottom: 1em; transition: transform .18s; display: flex; flex-direction: column; align-items: flex-start; }
+    .location-card:hover { transform: scale(1.03); box-shadow: 0 4px 20px rgba(255,95,109,0.16); }
+    .location-card .name { font-size: 1.3em; font-weight: bold; color: #ff5f6d; }
+    .location-card .address { font-size: 1em; color: #555; margin: 0.2em 0 0.8em 0; }
+    .location-card .website { font-size: 0.99em; color: #1d62f0; text-decoration: underline; }
+    .section-title { font-size: 1.5em; font-weight: bold; margin-top: 1.2em; color: #5f338c; }
+    .badge { background: #ffd700; color: #a5571a; padding: 0.3em 0.7em; border-radius: 12px; font-weight: bold; font-size: 1em; margin-right: 0.5em; }
+    .deal { background: #ffef99; border: 1px solid #ffd700; color: #a5571a; border-radius: 10px; padding: 0.8em; margin-bottom: 1em; font-size: 1.09em; }
+    .merch-list { margin-top: 1em; padding-left: 1.2em; }
+    .leaderboard { margin-top: 1.5em; background: #f6e7fe; border-radius: 10px; padding: 1em; }
     .leaderboard h4 { margin: 0.5em 0 0.6em 0; }
     .leaderboard ul { padding-left: 1.2em; }
-    .share-section {
-      margin-top: 1.8em;
-      text-align: center;
-      font-size: 1.13em;
-    }
+    .share-section { margin-top: 1.8em; text-align: center; font-size: 1.13em; }
   </style>
 </head>
 <body>
@@ -125,7 +34,26 @@
   <div class="container">
     <div class="section-title">🍓 All Acai Bowl Locations</div>
     <ul class="location-list" id="location-list">
-      <!-- Acai bowl locations will be loaded here -->
+      <li class="location-card">
+        <div class="name">The Urban Juicer</div>
+        <div class="address">2206 21st Ave S, Nashville, TN 37212</div>
+        <a class="website" href="https://urbanjuicer.com/" target="_blank">Website</a>
+      </li>
+      <li class="location-card">
+        <div class="name">E+ROSE Wellness Cafe</div>
+        <div class="address">1100 Fatherland St #104, Nashville, TN 37206</div>
+        <a class="website" href="https://www.erosejuice.com/" target="_blank">Website</a>
+      </li>
+      <li class="location-card">
+        <div class="name">Fruity Fuel</div>
+        <div class="address">123 Acai Ln, Nashville, TN 37205</div>
+        <a class="website" href="https://fruityfuel.com/" target="_blank">Website</a>
+      </li>
+      <li class="location-card">
+        <div class="name">Acai Dream Bar</div>
+        <div class="address">456 Berry St, Nashville, TN 37203</div>
+        <a class="website" href="https://acaidreambar.com/" target="_blank">Website</a>
+      </li>
     </ul>
     <div class="section-title">🎮 Your Adventure Progress</div>
     <div>
@@ -139,7 +67,7 @@
     <div class="deal">BOGO at Bowl & Joy (Weekend only)</div>
     <div class="deal">Free fruit topping at Fruity Fuel (After 3 bowls)</div>
     <div>
-      <a href="#" style="font-weight:bold; color:#ff5f6d;">Join Premium for $5/month</a> to unlock all deals!
+      <a href="premium.html" style="font-weight:bold; color:#ff5f6d;">Join Premium for $5/month</a> to unlock all deals!
     </div>
     <div class="section-title">🛒 Shop Acai Merch</div>
     <ul class="merch-list">
@@ -164,27 +92,5 @@
       <span style="font-weight:bold;">#NashvilleAcaiAdventure</span>
     </div>
   </div>
-  <script>
-    // Load acai bowl locations from the data/locations.json file
-    fetch('data/locations.json')
-      .then(response => response.json())
-      .then(locations => {
-        const list = document.getElementById('location-list');
-        locations.forEach(loc => {
-          const li = document.createElement('li');
-          li.className = 'location-card';
-          li.innerHTML = `
-            <div class="name">${loc.name}</div>
-            <div class="address">${loc.address}</div>
-            <a class="website" href="${loc.website}" target="_blank">Website</a>
-          `;
-          list.appendChild(li);
-        });
-      })
-      .catch(() => {
-        const list = document.getElementById('location-list');
-        list.innerHTML = '<li class="location-card">Unable to load locations. Please try again later.</li>';
-      });
-  </script>
 </body>
 </html>
