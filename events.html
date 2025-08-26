@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Events – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #ffe6fa; color: #a742a1; margin: 0; }
+    .container { max-width: 520px; margin: 2em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #fca7e622; padding: 2em; }
+    h1 { text-align: center; color: #a742a1; }
+    .event { background: #fff0fa; border-radius: 12px; padding: 1.1em; margin-bottom: 1.2em; }
+    .event-date { color: #d55db7; font-weight: bold; }
+    .join-btn { background: #a742a1; color: #fff; border: none; border-radius: 7px; padding: 0.5em 1.3em; font-weight: bold; cursor: pointer; float: right; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Upcoming Events</h1>
+    <div class="event">
+      <div class="event-date">Sept 14</div>
+      <div>🍓 Berry Bash Meetup @ Centennial Park <button class="join-btn">Join</button></div>
+    </div>
+    <div class="event">
+      <div class="event-date">Oct 5</div>
+      <div>🥣 Family Acai Bowl-Off Contest <button class="join-btn">Join</button></div>
+    </div>
+    <div class="event">
+      <div class="event-date">Oct 12</div>
+      <div>🌈 Kids’ Acai Art Day <button class="join-btn">Join</button></div>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
