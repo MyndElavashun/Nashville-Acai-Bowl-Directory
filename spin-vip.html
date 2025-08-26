@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VIP Wheel – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #e7e3ff; color: #4a3c6e; margin: 0; }
+    .container { max-width: 400px; margin: 3em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #5f338c22; padding: 2em; text-align: center; }
+    h1 { color: #5f338c; }
+    .wheel { font-size: 2.5em; margin: 1em 0; }
+    .spin-btn { background: #5f338c; color: #fff; padding: 0.7em 2em; font-size: 1.2em; border-radius: 12px; border: none; cursor: pointer; margin-bottom: 1em; }
+    .result { font-size: 1.4em; color: #a742a1; margin-top: 1em; }
+    .note { font-size: 0.9em; color: #9e9e9e; margin-top: 1em; }
+  </style>
+  <script>
+    function spinvip() {
+      const prizes = [
+        '👕 Free T-Shirt!',
+        '��� Free Cap!',
+        '🥣 Free Bowl!',
+        '🍓 Mega Sticker Pack!',
+        '😅 Try Again...'
+      ];
+      const result = prizes[Math.floor(Math.random() * prizes.length)];
+      document.getElementById('vipresult').innerText = result;
+    }
+  </script>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>VIP Wheel</h1>
+    <div class="wheel">🎰</div>
+    <button class="spin-btn" onclick="spinvip()">Spin VIP Wheel</button>
+    <div id="vipresult" class="result"></div>
+    <div class="note">VIPs only! Bigger prizes, bigger fun.</div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
