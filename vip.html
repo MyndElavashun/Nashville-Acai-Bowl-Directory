@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VIP Club – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #e7e3ff; color: #4a3c6e; margin: 0; }
+    .container { max-width: 480px; margin: 3em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #5f338c22; padding: 2em; text-align: center; }
+    h1 { color: #5f338c; }
+    .vip-badge { font-size: 2.2em; margin: 1em 0; }
+    .desc { font-size: 1.15em; margin: 1.2em 0; }
+    .cta-btn { background: #5f338c; color: #fff; border: none; border-radius: 7px; padding: 0.7em 2em; font-weight: bold; cursor: pointer; font-size: 1.08em; }
+    .note { font-size: 0.94em; color: #555; margin-top: 1.2em; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>VIP Club</h1>
+    <div class="vip-badge">🌟</div>
+    <div class="desc">Join the VIP Club for $49/yr<br>
+      and get a <b>limited edition hoodie</b>, exclusive events, and triple rewards all year!</div>
+    <button class="cta-btn" onclick="window.location='https://buy.stripe.com/test_vip123'">Join VIP</button>
+    <div class="note">VIP pays for itself in 4 visits. Only 46 spots left!</div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
