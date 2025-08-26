@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Acai Merch Shop – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fff; color: #5f338c; margin: 0; }
+    .container { max-width: 600px; margin: 2em auto; background: #fff0f6; border-radius: 18px; box-shadow: 0 4px 20px #ff5f6d22; padding: 2em; }
+    h1 { text-align: center; color: #ff5f6d; }
+    .item { background: #fff; border-radius: 10px; margin-bottom: 1.4em; padding: 1em; display: flex; align-items: center; }
+    .item img { width: 64px; height: 64px; margin-right: 1.2em; border-radius: 8px; border: 2px solid #ffd6e0; }
+    .buy-btn { margin-left: auto; background: #ff5f6d; color: #fff; border: none; border-radius: 7px; padding: 0.5em 1.3em; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Acai Merch Shop</h1>
+    <div class="item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/bowl-with-spoon_1f963.png" alt="Bowl T-Shirt">
+      <div>
+        <div><b>Bowl Hunter T-Shirt</b></div>
+        <div>$22</div>
+      </div>
+      <button class="buy-btn">Buy</button>
+    </div>
+    <div class="item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/strawberry_1f353.png" alt="Sticker">
+      <div>
+        <div><b>Berry Badge Sticker Pack</b></div>
+        <div>$5</div>
+      </div>
+      <button class="buy-btn">Buy</button>
+    </div>
+    <div class="item">
+      <img src="https://em-content.zobj.net/thumbs/120/apple/354/cup-with-straw_1f964.png" alt="Custom Cup">
+      <div>
+        <div><b>Custom Name Kids’ Cup</b></div>
+        <div>$14</div>
+      </div>
+      <button class="buy-btn">Buy</button>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
