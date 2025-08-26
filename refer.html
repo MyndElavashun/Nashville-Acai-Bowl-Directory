@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Refer & Earn – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #e6fff2; color: #026640; margin: 0; }
+    .container { max-width: 460px; margin: 3em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #00c89622; padding: 2em; text-align: center; }
+    h1 { color: #00c896; }
+    .ref-badge { font-size: 2.1em; margin: 1em 0; }
+    .reward { font-size: 1.1em; margin: 1.2em 0; color: #1b9c6e; }
+    input { font-size: 1.1em; padding: 0.3em 0.7em; border-radius: 7px; border: 1px solid #b2f0dd; }
+    .share-btn { background: #00c896; color: #fff; border: none; border-radius: 7px; padding: 0.5em 1.3em; font-weight: bold; cursor: pointer; margin-top: 1em; }
+    .note { font-size: 0.94em; color: #555; margin-top: 1.2em; }
+  </style>
+  <script>
+    function copyLink() {
+      const inp = document.getElementById('referlink');
+      inp.select();
+      document.execCommand('copy');
+      document.getElementById('copied').style.display = 'inline-block';
+    }
+  </script>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Refer & Earn</h1>
+    <div class="ref-badge">🎉</div>
+    <div class="reward">Get <b>$3 credit</b> for every friend who joins Premium with your link!</div>
+    <input type="text" value="https://nashacai.com/join?ref=yourname" id="referlink" readonly>
+    <button class="share-btn" onclick="copyLink()">Copy Referral Link</button>
+    <div id="copied" style="display:none; color:#026640; font-weight:bold;">Copied!</div>
+    <div class="note">No limit! The more friends, the more rewards.</div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
