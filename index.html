@@ -2,227 +2,407 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dopamine Profit Hub</title>
+  <title>🥣 Nashville Acai Bowl Adventure Directory</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- AdSense/Ad Network placeholder -->
-  <!-- <script data-ad-client="ca-pub-xxxx" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(135deg, #ffef99 0%, #ffd6e0 100%);
-      color: #222;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+      color: #333;
+      line-height: 1.6;
     }
+    
     header {
-      background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
       color: white;
       text-align: center;
-      padding: 2em 1em 1em 1em;
-      box-shadow: 0 2px 8px rgba(255,95,109,0.15);
-      border-radius: 0 0 30px 30px;
+      padding: 3em 1em 2em 1em;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+      border-radius: 0 0 40px 40px;
     }
+    
     h1 {
-      font-size: 2.4em;
+      font-size: 2.8em;
       margin: 0;
       font-weight: 900;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
+    
     .tagline {
-      font-size: 1.1em;
-      margin: 0.6em 0 0 0;
-      font-weight: 500;
-      color: #fffbe9;
+      font-size: 1.2em;
+      margin: 0.8em 0 0 0;
+      font-weight: 400;
+      color: #f0f4ff;
     }
+    
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2em auto;
-      background: rgba(255,255,255,0.98);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(255,95,109,0.08);
-      padding: 2em;
+      background: rgba(255,255,255,0.95);
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(102, 126, 234, 0.15);
+      padding: 2.5em;
     }
-    .ads-section {
-      margin: 1.5em 0;
+    
+    .search-section {
+      margin-bottom: 2em;
       text-align: center;
     }
-    .ads-placeholder {
-      background: #ffd700;
-      color: #ff5f6d;
-      border-radius: 8px;
-      padding: 1.1em;
-      font-size: 1.1em;
-      font-weight: bold;
-      box-shadow: 0 2px 14px rgba(255,223,0,0.12);
-      margin: 0 auto;
-      max-width: 420px;
+    
+    .search-input {
+      width: 60%;
+      max-width: 400px;
+      padding: 1em 1.5em;
+      border: 2px solid #e8f0fe;
+      border-radius: 25px;
+      font-size: 1em;
+      background: white;
+      box-shadow: 0 2px 10px rgba(102, 126, 234, 0.1);
+      transition: border-color 0.3s;
     }
-    .affiliate-grid {
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .locations-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5em;
       margin: 2em 0;
     }
-    .product-card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(255,95,109,0.09);
-      padding: 1.2em;
-      text-align: center;
-      transition: transform .18s;
-    }
-    .product-card:hover {
-      transform: scale(1.04);
-      box-shadow: 0 4px 20px rgba(255,95,109,0.16);
-    }
-    .product-card img {
-      width: 68px;
-      height: 68px;
-      object-fit: contain;
-      margin-bottom: 0.9em;
-      border-radius: 50%;
-      box-shadow: 0 2px 8px rgba(255,95,109,0.09);
-    }
-    .product-title {
-      font-size: 1.1em;
-      font-weight: 700;
-      color: #ff5f6d;
-      margin-bottom: 0.3em;
-    }
-    .product-desc {
-      font-size: 0.93em;
-      color: #444;
-      margin-bottom: 0.6em;
-    }
-    .buy-btn {
-      background: linear-gradient(90deg, #ff5f6d 0%, #ffc371 100%);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
-      font-weight: 700;
+    
+    .location-card {
+      background: white;
+      border-radius: 16px;
+      padding: 1.8em;
+      border: 2px solid #f0f4ff;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+      transition: all 0.3s ease;
       cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 2px 10px rgba(255,95,109,0.08);
-      transition: background .16s;
+      position: relative;
+      overflow: hidden;
     }
-    .buy-btn:hover {
-      background: linear-gradient(90deg, #ffc371 0%, #ff5f6d 100%);
+    
+    .location-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+      border-color: #667eea;
     }
-    .newsletter-section {
-      margin: 2em 0;
-      background: #ffef99;
-      border-radius: 12px;
-      box-shadow: 0 2px 16px rgba(255,223,0,0.08);
-      padding: 1.4em;
-      text-align: center;
+    
+    .location-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     }
-    .newsletter-section input[type="email"] {
-      padding: 0.6em;
-      border-radius: 6px;
-      border: 1px solid #fffbe9;
-      font-size: 1em;
-      width: 50%;
-      max-width: 240px;
-      margin-right: 0.4em;
+    
+    .location-name {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 0.5em;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    
+    .location-name::before {
+      content: '🥣';
+      font-size: 1.2em;
+    }
+    
+    .location-address {
+      color: #666;
+      margin-bottom: 0.8em;
+      font-size: 0.95em;
+    }
+    
+    .location-description {
+      color: #555;
+      margin-bottom: 1em;
+      font-size: 0.9em;
+      line-height: 1.5;
+    }
+    
+    .location-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
       margin-bottom: 1em;
     }
-    .newsletter-section button {
-      background: #ff5f6d;
+    
+    .feature-badge {
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 0.3em 0.8em;
+      border-radius: 15px;
+      font-size: 0.8em;
+      font-weight: 600;
+    }
+    
+    .rating-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1em;
+    }
+    
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      font-weight: 700;
+      color: #667eea;
+    }
+    
+    .stars {
+      color: #ffc107;
+      font-size: 1.1em;
+    }
+    
+    .visit-btn {
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
       color: white;
       border: none;
-      border-radius: 6px;
-      padding: 0.6em 1em;
-      font-size: 1em;
+      border-radius: 20px;
+      padding: 0.6em 1.2em;
+      font-size: 0.9em;
+      font-weight: 600;
       cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 2px 10px rgba(255,95,109,0.06);
-      transition: background .15s;
-    }
-    .newsletter-section button:hover {
-      background: #ffc371;
-      color: #ff5f6d;
-    }
-    .social-links {
-      margin: 2em 0 0 0;
-      text-align: center;
-    }
-    .social-links a {
-      display: inline-block;
-      margin: 0 1em;
-      font-size: 1.3em;
-      color: #ff5f6d;
       text-decoration: none;
-      transition: color .18s;
+      transition: all 0.3s;
     }
-    .social-links a:hover {
-      color: #ffc371;
+    
+    .visit-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
     }
-    footer {
-      background: #ffb6c1;
-      color: #ff5f6d;
+    
+    .loading {
       text-align: center;
-      padding: 1em 0;
-      font-size: 1em;
-      border-radius: 0 0 14px 14px;
-      margin-top: 2em;
+      padding: 2em;
+      color: #667eea;
+      font-size: 1.1em;
     }
-    @media (max-width: 600px) {
-      .container { padding: 1em; }
-      h1 { font-size: 1.5em; }
-      .newsletter-section input[type="email"] { width: 90%; }
+    
+    .stats-section {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 1.5em;
+      border-radius: 16px;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1em;
+      margin-top: 1em;
+    }
+    
+    .stat-item {
+      background: rgba(255,255,255,0.2);
+      padding: 1em;
+      border-radius: 12px;
+    }
+    
+    .stat-number {
+      font-size: 1.8em;
+      font-weight: 900;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.9em;
+      opacity: 0.9;
+    }
+    
+    footer {
+      background: #667eea;
+      color: white;
+      text-align: center;
+      padding: 1.5em 0;
+      margin-top: 3em;
+      border-radius: 0 0 20px 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .container { 
+        padding: 1.5em; 
+        margin: 1em;
+      }
+      h1 { 
+        font-size: 2em; 
+      }
+      .search-input {
+        width: 90%;
+      }
+      .locations-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Dopamine Profit Hub</h1>
-    <div class="tagline">Feel Good, Earn Good — Simple Monetization for Maximum Profit</div>
+    <h1>🥣 Nashville Acai Bowl Adventure Directory</h1>
+    <div class="tagline">Find the BEST acai bowls near you - Nashville families and kids!</div>
   </header>
+  
   <div class="container">
-    <div class="ads-section">
-      <div class="ads-placeholder">
-        [AD SPACE] — Paste your AdSense/ad network code here!
+    <div class="search-section">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search for acai bowl locations...">
+    </div>
+    
+    <div class="stats-section">
+      <h3 style="margin-top: 0;">🏆 Nashville Acai Adventure Stats</h3>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" id="totalLocations">0</span>
+          <span class="stat-label">Locations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="avgRating">0</span>
+          <span class="stat-label">Avg Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="kidFriendly">0</span>
+          <span class="stat-label">Kid-Friendly</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="onlineOrders">0</span>
+          <span class="stat-label">Online Orders</span>
+        </div>
       </div>
     </div>
-    <h2 style="color:#ff5f6d;">Affiliate Picks: Profit from Happiness</h2>
-    <div class="affiliate-grid">
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=80&h=80" alt="Supplement">
-        <div class="product-title">DopaMax Supplement</div>
-        <div class="product-desc">Boost dopamine & focus. Top seller!</div>
-        <a href="https://your-affiliate-link.example.com/dopamax" class="buy-btn" target="_blank">Buy Now</a>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1519864600265-c3d0a6610b80?auto=format&fit=facearea&w=80&h=80" alt="Book">
-        <div class="product-title">Dopamine Effect (Book)</div>
-        <div class="product-desc">Unlock your motivation and profit with science.</div>
-        <a href="https://your-affiliate-link.example.com/book" class="buy-btn" target="_blank">Shop Book</a>
-      </div>
-      <div class="product-card">
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=80&h=80" alt="Merch">
-        <div class="product-title">Dopamine Vibes Tee</div>
-        <div class="product-desc">Wear your happiness. Bright and bold!</div>
-        <a href="https://your-affiliate-link.example.com/shirt" class="buy-btn" target="_blank">Get Shirt</a>
-      </div>
+    
+    <div id="loadingMessage" class="loading">
+      🍓 Loading delicious acai bowl locations...
     </div>
-    <div class="newsletter-section">
-      <h3>Get Weekly Profit Tips!</h3>
-      <form action="#" method="POST">
-        <input type="email" name="email" placeholder="Your email..." required>
-        <button type="submit">Subscribe</button>
-      </form>
-      <div style="font-size:0.93em;color:#b48e00;margin-top:0.6em;">No spam. Just pure profit strategies.</div>
-    </div>
-    <div class="social-links">
-      <a href="https://instagram.com/" target="_blank" title="Instagram">📸</a>
-      <a href="https://twitter.com/" target="_blank" title="Twitter">🐦</a>
-      <a href="https://tiktok.com/" target="_blank" title="TikTok">🎵</a>
-      <a href="mailto:your@email.com" title="Email">✉️</a>
+    
+    <div id="locationsContainer" class="locations-grid" style="display: none;">
+      <!-- Locations will be loaded here dynamically -->
     </div>
   </div>
+  
   <footer>
-    &copy; 2025 Dopamine Profit Hub &mdash; Simple, Automated, Profitable!
+    &copy; 2025 Nashville Acai Bowl Adventure Directory — #NashvilleAcaiAdventure
   </footer>
+
+  <script>
+    let allLocations = [];
+    
+    // Generate star rating display
+    function generateStars(rating) {
+      const fullStars = Math.floor(rating);
+      const hasHalfStar = rating % 1 !== 0;
+      let stars = '★'.repeat(fullStars);
+      if (hasHalfStar) stars += '☆';
+      return stars;
+    }
+    
+    // Load locations from JSON file
+    async function loadLocations() {
+      try {
+        const response = await fetch('./data/locations.json');
+        if (!response.ok) {
+          throw new Error('Failed to load locations');
+        }
+        allLocations = await response.json();
+        displayLocations(allLocations);
+        updateStats(allLocations);
+        document.getElementById('loadingMessage').style.display = 'none';
+        document.getElementById('locationsContainer').style.display = 'grid';
+      } catch (error) {
+        console.error('Error loading locations:', error);
+        document.getElementById('loadingMessage').innerHTML = '❌ Failed to load locations. Please try again later.';
+      }
+    }
+    
+    // Display locations in the grid
+    function displayLocations(locations) {
+      const container = document.getElementById('locationsContainer');
+      container.innerHTML = '';
+      
+      locations.forEach(location => {
+        const card = document.createElement('div');
+        card.className = 'location-card';
+        card.onclick = () => handleLocationClick(location);
+        
+        const features = [];
+        if (location.kidZone) features.push('Kid Zone');
+        if (location.coupons) features.push('Coupons');
+        if (location.orderOnline) features.push('Order Online');
+        
+        card.innerHTML = `
+          <div class="location-name">${location.name}</div>
+          <div class="location-address">📍 ${location.address}</div>
+          <div class="location-description">${location.description}</div>
+          <div class="location-features">
+            ${features.map(feature => `<span class="feature-badge">${feature}</span>`).join('')}
+          </div>
+          <div class="rating-section">
+            <div class="rating">
+              <span class="stars">${generateStars(location.rating)}</span>
+              <span>${location.rating}</span>
+            </div>
+            <button class="visit-btn">Visit Now</button>
+          </div>
+        `;
+        
+        container.appendChild(card);
+      });
+    }
+    
+    // Handle location click
+    function handleLocationClick(location) {
+      if (location.website) {
+        window.open(location.website, '_blank');
+      } else {
+        // Create a Google Maps search URL
+        const searchQuery = encodeURIComponent(`${location.name} ${location.address}`);
+        const mapsUrl = `https://www.google.com/maps/search/${searchQuery}`;
+        window.open(mapsUrl, '_blank');
+      }
+    }
+    
+    // Update statistics
+    function updateStats(locations) {
+      const totalLocations = locations.length;
+      const avgRating = (locations.reduce((sum, loc) => sum + loc.rating, 0) / totalLocations).toFixed(1);
+      const kidFriendly = locations.filter(loc => loc.kidZone).length;
+      const onlineOrders = locations.filter(loc => loc.orderOnline).length;
+      
+      document.getElementById('totalLocations').textContent = totalLocations;
+      document.getElementById('avgRating').textContent = avgRating;
+      document.getElementById('kidFriendly').textContent = kidFriendly;
+      document.getElementById('onlineOrders').textContent = onlineOrders;
+    }
+    
+    // Search functionality
+    function filterLocations(searchTerm) {
+      const filtered = allLocations.filter(location => 
+        location.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        location.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        location.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      displayLocations(filtered);
+    }
+    
+    // Set up search input event listener
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      filterLocations(e.target.value);
+    });
+    
+    // Load locations when page loads
+    document.addEventListener('DOMContentLoaded', loadLocations);
+  </script>
 </body>
 </html>

@@ -1,1 +1,87 @@
-[ { "name": "Vitality Bowls", "address": "203 Franklin Rd, Brentwood, TN", "website": "https://vitalitybowls.com/location/brentwood/" }, { "name": "E+ROSE Wellness Cafe", "address": "1100 Fatherland St, Nashville, TN", "website": "https://www.erosejuice.com/" }, { "name": "Franklin Juice Co.", "address": "2301 12th Ave S, Nashville, TN", "website": "https://franklinjuice.com/" } ]
+[
+  {
+    "name": "Acai Dream Bar",
+    "address": "123 Main St, Nashville, TN",
+    "rating": 4.9,
+    "kidZone": true,
+    "coupons": true,
+    "orderOnline": true,
+    "description": "Dreamy acai bowls with fresh toppings and kid-friendly atmosphere"
+  },
+  {
+    "name": "Berry Bliss",
+    "address": "456 Berry Rd, Nashville, TN", 
+    "rating": 4.8,
+    "kidZone": true,
+    "coupons": true,
+    "orderOnline": true,
+    "description": "Blissful berry bowls perfect for the whole family"
+  },
+  {
+    "name": "Bowl & Joy",
+    "address": "789 Happy Ave, Nashville, TN",
+    "rating": 4.7,
+    "kidZone": true,
+    "coupons": false,
+    "orderOnline": false,
+    "description": "Joyful bowls made with love and fresh ingredients"
+  },
+  {
+    "name": "NashBowls Truck",
+    "address": "Mobile Food Truck - Various Locations",
+    "rating": 4.7,
+    "kidZone": true,
+    "coupons": true,
+    "orderOnline": false,
+    "description": "Nashville's favorite mobile acai bowl experience",
+    "website": "https://www.nashbowls.com/nashville"
+  },
+  {
+    "name": "Fruity Fuel",
+    "address": "321 Energy Ln, Nashville, TN",
+    "rating": 4.6,
+    "kidZone": true,
+    "coupons": true,
+    "orderOnline": true,
+    "description": "Fuel your day with energizing acai bowls"
+  },
+  {
+    "name": "Purple Spoon",
+    "address": "654 Smoothie St, Nashville, TN",
+    "rating": 4.5,
+    "kidZone": true,
+    "coupons": true,
+    "orderOnline": true,
+    "description": "Creative purple bowls with unique toppings"
+  },
+  {
+    "name": "Vitality Bowls",
+    "address": "203 Franklin Rd, Brentwood, TN",
+    "rating": 4.4,
+    "kidZone": true,
+    "coupons": false,
+    "orderOnline": true,
+    "description": "Superfood bowls for optimal health and vitality",
+    "website": "https://vitalitybowls.com/location/brentwood/"
+  },
+  {
+    "name": "E+ROSE Wellness Cafe",
+    "address": "1100 Fatherland St, Nashville, TN",
+    "rating": 4.3,
+    "kidZone": false,
+    "coupons": false,
+    "orderOnline": true,
+    "description": "Wellness-focused cafe with premium acai bowls",
+    "website": "https://www.erosejuice.com/"
+  },
+  {
+    "name": "Franklin Juice Co.",
+    "address": "2301 12th Ave S, Nashville, TN",
+    "rating": 4.2,
+    "kidZone": true,
+    "coupons": false,
+    "orderOnline": false,
+    "description": "Fresh juice and acai bowls made to order",
+    "website": "https://franklinjuice.com/"
+  }
+]
