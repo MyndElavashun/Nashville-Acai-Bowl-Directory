@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fffbe9; color: #5f338c; margin: 0; }
+    .container { max-width: 500px; margin: 2em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #ffd70044; padding: 2em; }
+    h1 { text-align: center; color: #ff5f6d; }
+    .crown { font-size: 2em; }
+    ol { font-size: 1.3em; margin-top: 1em; }
+    .cta { margin-top: 2em; text-align: center; }
+    .cta-btn { background: #ff5f6d; color: #fff; padding: 0.6em 1.6em; border-radius: 12px; font-weight: bold; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1><span class="crown">👑</span> Top Bowlers Leaderboard</h1>
+    <ol>
+      <li>Emma (5 badges, 12 bowls!)</li>
+      <li>The Johnson Family</li>
+      <li>Lucas</li>
+      <li>Sarah</li>
+      <li>The Smiths</li>
+    </ol>
+    <div class="cta">
+      Think you can beat them? <br>
+      <a href="index.html" class="cta-btn">Start Your Acai Quest!</a>
+    </div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
