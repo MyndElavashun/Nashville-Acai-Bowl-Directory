@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Family Pack – Nashville Acai Bowl Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: 'Inter', Arial, sans-serif; background: #fffbe9; color: #b7892a; margin: 0; }
+    .container { max-width: 460px; margin: 3em auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 20px #ffd70022; padding: 2em; text-align: center; }
+    h1 { color: #b7892a; }
+    .pack { font-size: 2.1em; margin: 1em 0; }
+    .desc { font-size: 1.08em; margin: 1.2em 0; }
+    .buy-btn { background: #ffd700; color: #a5571a; border: none; border-radius: 7px; padding: 0.7em 2em; font-weight: bold; cursor: pointer; font-size: 1.08em; }
+    .note { font-size: 0.94em; color: #555; margin-top: 1.2em; }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="container">
+    <h1>Family Pack</h1>
+    <div class="pack">👨‍👩‍👧‍👦</div>
+    <div class="desc">Get 5 Premium memberships for just $15/month (save 40%).<br>
+      Perfect for teams, friends, and families!</div>
+    <button class="buy-btn" onclick="window.location='https://buy.stripe.com/test_family123'">Get Family Pack</button>
+    <div class="note">Best value! Limited time only.</div>
+  </div>
+  <script>
+    fetch('navbar.html').then(r=>r.text()).then(t=>document.getElementById('navbar').innerHTML = t);
+  </script>
+</body>
+</html>
