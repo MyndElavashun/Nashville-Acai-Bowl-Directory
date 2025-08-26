@@ -1,0 +1,29 @@
+name: Dopamine Acai Directory Automation
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  aggregate-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Fetch Data
+        run: python scripts/fetch_acai_data.py
+      - name: Validate Data
+        run: python scripts/validate_acai_data.py
+      - name: Update Leaderboards
+        run: python scripts/update_leaderboards.py
+      - name: Commit & Push
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name 'dopamine-bot'
+          git config --global user.email 'dopamine-bot@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
+          git add .
+          git commit -m "Automated update [bot]" || echo "No changes to commit"
+          git push
